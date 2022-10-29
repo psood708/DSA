@@ -59,7 +59,60 @@ void insert(struct Node *p,int index,int x){
     }
 }
 
+//inserting in a sorted linked list
+void sorted_insert(struct Node *p,int x){
+    struct Node *t,*q=NULL;
+    //here we use 3 pointers
+    t = (struct Node *)malloc(sizeof(struct Node));
+    t->data = x;
+    t->next = NULL;
+    if(first==NULL){
+        first = t;
+    }
+    else{
+        while(p&& p->data<x){
+            q = p;
+            p = p->next;
+        }
+        if(p==first){
+            t->next = first;
+            first = t;
 
+        }
+        else{
+            t->next = q->next;
+            q->next = t;
+        }
+    }
+}
+
+//deleting nodes
+//1. deleting first node
+//2. deleteing nodes from between
+//for deleting nodes from between we need a tail pointer that follows the previos node before the deleted nodes so p->next can be given to the next node
+int Delete(struct Node *p, int index){
+    struct Node *q;
+    int x = -1;
+    if(index <1 || index > node_count(p))
+      return -1;
+    if(index==1){
+        q= first;
+        x = first->data;
+        first = first->next;
+        free(q);
+        return x;
+    }
+    else{
+        for(int i=0;i<index-1;i++){
+            q = p;
+            p =p->next;
+        }
+        q->next = p->next;
+        x = p->data;
+        free(p);
+        return x;
+    }
+}
 
 void display(struct Node *p){
     //we will have parameter as first
@@ -134,11 +187,13 @@ int main(){
     int A[] = {3,5,7,10,15};
     create(A,5);
     display(first);
-    printf("\n");
-    insert(first,4,14);
+    printf("\n\n");
+    sorted_insert(first,8);
+    // insert(first,4,14);
     display(first);
-     
-    // printf("\n");
+    printf("\nDeleted element is %d",Delete(first,4));
+    printf("\n"); 
+     display(first);
     // Rdisplay(first);
     // printf("\n%d",node_count(first));
     struct Node *new ;
