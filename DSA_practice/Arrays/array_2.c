@@ -24,9 +24,19 @@ void bubble_sort(int arr[], int len)
 }
 
 void insert_sort(int arr[],int len){
-   for(int i = 0;i<len;i++){
-    
+   for(int i = 1;i<len;i++){
+      int k = arr[i];
+      int j = i-1;
+      while(j>=0 && arr[j] > k){
+        arr[j+1] = arr[j];
+        j = j-1;
+      }
+      arr[j+1] = k;
    }
+    for (int p = 0; p < len; p++)
+    {
+        printf("%d ", arr[p]);
+    }
 }
 
 void select_sort(int arr[], int len)
@@ -67,6 +77,7 @@ int main()
     int length = 6;
     int arr[] = {34,3,9,5,22,11};
     int arr1[] = {7,34,3,9,5,22,11};
+    int arr2[] = {7,2,4,1,11,3};
     // printf("Enter the number of elements in array: ");
     // scanf("%d", &length);
     // int arr[length];
@@ -82,5 +93,7 @@ int main()
     bubble_sort(arr, length);
     printf("\nThis is Selection Sort: ");
     select_sort(arr1, length+1);
+    printf("\nThis is Insertion Sort: ");
+    select_sort(arr2, length);
     return -1;
 }
