@@ -2,8 +2,8 @@
 #include<stdlib.h>
 #include<stdbool.h>
  
-#define N 5
-int stack_arr[N];
+
+int stack_arr[6];
 int top = -1;
  
 struct stack_Linkedlist
@@ -45,7 +45,7 @@ void display_ll(){
 }
  
 void push_arr(int item){
-    if(top == N-1){
+    if(top == 5){
         printf("Overflow condition reached\n");
     }else{
         top++;
@@ -86,16 +86,19 @@ int Top(){
 int main(){
  
     //Stack using array
-    push_arr(8);
-    pop_arr();
-    push_arr(9);
-    push_arr(5);
-    display_arr();
+    // push_arr(8);
+    // pop_arr();
+    // push_arr(9);
+    // push_arr(5);
+    // display_arr();
  
     //stack using linked list
     push_ll(4);
     push_ll(11);
+    push_ll(6)
+    display_ll();
     pop_ll();
+    display_ll();
     push_ll(12);
     display_ll();
     return 0;
