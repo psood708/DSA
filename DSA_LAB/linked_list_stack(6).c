@@ -2,7 +2,6 @@
 #include<stdlib.h>
 #include<stdbool.h>
  
-
 int stack_arr[6];
 int top = -1;
  
@@ -84,18 +83,9 @@ int Top(){
     }
 }
 int main(){
- 
-    //Stack using array
-    // push_arr(8);
-    // pop_arr();
-    // push_arr(9);
-    // push_arr(5);
-    // display_arr();
- 
-    //stack using linked list
     push_ll(4);
     push_ll(11);
-    push_ll(6)
+    push_ll(6);
     display_ll();
     pop_ll();
     display_ll();

@@ -24,7 +24,7 @@ void min_max(int arr[], int len)
         {
             arr1[k] = arr[k];
         }
-    }
+    } 
     int max1 = 0, min1 = arr1[0];
     for (int j = 0; j < len - 2; j++)
     {
@@ -46,4 +46,4 @@ int main()
     int arr[] = {8, 4, 6, 2, 9};
     min_max(arr, 5);
     return -1;
-}
+} 

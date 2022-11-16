@@ -13,23 +13,21 @@ int main(){
     struct Organization o1[2] = { };
     int n =0;
     while(n<2){
-        //here we need to enter the organizations
         printf("Enter Organization Name: ");
         scanf("%s",&o1[n].org_name);
         printf("Enter Organization ID: ");
         scanf("%d",&o1[n].org_id);
         n++;
     }
-    for(int i = 0;i<2;i++){ 
+    for(int i = 0;i<2;i++){
       for(int j =0;j<2;j++){
-        //here we need to add the mployees
             printf("%s Employee %d\n",o1[i].org_name,j+1);
             printf("Enter Employee Name: ");
             scanf("%s",&o1[i].e[j].emp_name);
             printf("Enter Id: ");
             scanf("%d",&o1[i].e[j].emp_id);
             printf("Enter Salary:");
-            scanf( "%lf",&o1[i].e[j].em_salary); 
+            scanf( "%lf",&o1[i].e[j].em_salary);
       }    
     }
     for(int k = 0;k<2;k++){

@@ -4,7 +4,7 @@ struct Node{
     int data;
     struct Node *next;
 
-}*first = NULL;
+}*first = NULL,*second=NULL,*third=NULL;
 
 void create(int A[],int n){
 //n is length of array
@@ -25,6 +25,34 @@ void create(int A[],int n){
   }
 
 }
+
+void create2(int A[],int n){
+//n is length of array
+  struct Node *t,*last;
+  //here we have used the first initialized node struct
+  second = (struct Node *)malloc(sizeof(struct Node));
+  second->data = A[0];
+  //the next node is done null and will change the value
+  second->next = NULL;
+  last = second;
+//here we have started from 1 as we have created the inital node
+  for(int i =1;i<n;i++){
+    t = (struct Node *)malloc(sizeof(struct Node));
+    t->data = A[i];
+    t->next = NULL;
+    last->next = t;
+    last = t;
+  }
+
+}
+
+//Merging two linkedlists ascending orderr
+
+
+
+
+
+
 
 //inserting a new node
 //1.before first node
@@ -160,6 +188,18 @@ struct Node * search(struct Node *p,int val){
         return NULL;
     }
 }
+
+
+void Concat(struct Node *p,struct Node *q){
+    third = p;
+    while(p->next!=NULL){
+        p = p->next;
+        p->next = q;
+
+    }
+}
+
+
 //improving linear searchh
 //1.Transposition: here the data is switched with the previous value
 //2. Move to Head: here the key value is brought in the start of the linked list this will save time next time we want to search
@@ -185,18 +225,24 @@ struct Node * search_two(struct Node *p,int key){
 
 int main(){
     int A[] = {3,5,7,10,15};
+    int B[] = {1,4,0,6};
     create(A,5);
     display(first);
+       printf("\n\n");
+    create2(B,4);
+    display(second);
     printf("\n\n");
-    sorted_insert(first,8);
-    // insert(first,4,14);
-    display(first);
-    printf("\nDeleted element is %d",Delete(first,4));
-    printf("\n"); 
-     display(first);
-    // Rdisplay(first);
-    // printf("\n%d",node_count(first));
-    struct Node *new ;
+    Concat(first,second);
+    display(third);
+    // sorted_insert(first,8);
+    // // insert(first,4,14);
+    // display(first);
+    // printf("\nDeleted element is %d",Delete(first,4));
+    // printf("\n"); 
+    //  display(first);
+    // // Rdisplay(first);
+    // // printf("\n%d",node_count(first));
+    // struct Node *new ;
     //<<<<<>>>>>>>>>>>
     //MOVE to head linear search begins
     //here we see the change in the initial first

@@ -3,8 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <stdlib.h>
-
-
+#include<math.h>
 // Stack type
 struct Stack
 {
@@ -18,7 +17,7 @@ struct Stack* createStack( int capacity )
 {
     struct Stack* stack = (struct Stack*) malloc(sizeof(struct Stack));
  
-    if (!stack) return NULL;
+    if (!stack) return NULL; 
  
     stack->top = -1;
     stack->capacity = capacity;
@@ -82,13 +81,14 @@ int evaluatePostfix(char* exp)
             case '-': push(stack, val2 - val1); break;
             case '*': push(stack, val2 * val1); break;
             case '/': push(stack, val2/val1); break;
+            case '^': push(stack,pow(val1,val2)); break;
             }
         }
     }
     return pop(stack);
 }
  
-// Driver program to test above functions
+
 int main()
 {
     char exp[50];

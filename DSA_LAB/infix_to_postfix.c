@@ -7,11 +7,50 @@ struct stack
 {
     int tos;
 };
-void push(char a[], struct stack *st, int ele); 
-char poped(char a[], struct stack *st);
-bool isEmpty(struct stack *st);
-char stackTop(char a[], struct stack *st);
-bool prcd(char a, char b);
+void push(char a[], struct stack *st, int ele)
+{
+    st->tos = st->tos + 1;
+    a[st->tos] = ele;
+}
+char poped(char a[], struct stack *st)
+{
+    char item = a[st->tos];
+    a[st->tos] = '\0';
+    st->tos = st->tos - 1;
+    return item;
+}
+bool isEmpty(struct stack *st)
+{
+    if (st->tos == -1)
+        return true;
+    else
+        return false;
+}
+char stackTop(char a[], struct stack *st)
+{
+    return a[st->tos];
+}
+bool prcd(char a, char b)
+{
+    if ((a == '+' || a == '-') && (b == '-' || b == '+'))
+        return true;
+    else if (a == '+' || a == '-')
+        return false;
+    else if (a == '-' && (b == '+' || b == '-'))
+        return true;
+    else if ((a == '/' || a == '*' || a == '%') && (b == '(' || b == '$' || b == '^'))
+        return false;
+    else if ((a == '/' || a == '*' || a == '%'))
+        return true;
+    else if ((a == '^' || a == '$') && b == '(')
+        return false;
+    else if ((a == '^' || a == '$'))
+        return true;
+    else if (a == '(')
+        return false;
+    else
+        return false;
+}
 int main()
 {
     struct stack *st = (struct stack *)malloc(sizeof(struct stack));
@@ -61,47 +100,4 @@ int main()
         printf("%c", cd);
     }
 }
-void push(char a[], struct stack *st, int ele)
-{
-    st->tos = st->tos + 1;
-    a[st->tos] = ele;
-}
-char poped(char a[], struct stack *st)
-{
-    char item = a[st->tos];
-    a[st->tos] = '\0';
-    st->tos = st->tos - 1;
-    return item;
-}
-bool isEmpty(struct stack *st)
-{
-    if (st->tos == -1)
-        return true;
-    else
-        return false;
-}
-char stackTop(char a[], struct stack *st)
-{
-    return a[st->tos];
-}
-bool prcd(char a, char b)
-{
-    if ((a == '+' || a == '-') && (b == '-' || b == '+'))
-        return true;
-    else if (a == '+' || a == '-')
-        return false;
-    else if (a == '-' && (b == '+' || b == '-'))
-        return true;
-    else if ((a == '/' || a == '*' || a == '%') && (b == '(' || b == '$' || b == '^'))
-        return false;
-    else if ((a == '/' || a == '*' || a == '%'))
-        return true;
-    else if ((a == '^' || a == '$') && b == '(')
-        return false;
-    else if ((a == '^' || a == '$'))
-        return true;
-    else if (a == '(')
-        return false;
-    else
-        return false;
-}
+
