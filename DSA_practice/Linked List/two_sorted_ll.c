@@ -5,6 +5,7 @@ struct Node{
     int data;
     struct Node *next;
 } *first = NULL,*second=NULL,*third=NULL;
+//this program is to sort two sorted linked lists
 
 void create2(int A[], int n) 
 {
@@ -97,7 +98,8 @@ void sorted(){
 
     struct Node *ll,*last;
     third = (struct Node *)malloc(sizeof(struct Node));
-    int arr[],j=2 ;
+    int arr[];
+    int j=2 ;
 
     while(j>0){
         for(int i=0;i<3;i++){
