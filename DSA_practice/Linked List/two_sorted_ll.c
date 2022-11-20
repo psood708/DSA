@@ -28,10 +28,6 @@ void create2(int A[], int n)
         last = t;
     }
 }
-
-
-
-
 void create1(int A[], int n) 
 {
     // n is length of array
@@ -52,38 +48,38 @@ void create1(int A[], int n)
         last = t;
     }
 }
- 
-void insert(struct Node *p, int index, int x)
-{
-    struct Node *t;
-    if (index < 0 || index > 3)
-    {
-        printf("You have inserted wrong index");
-    }
-    t = (struct Node *)malloc(sizeof(struct Node));
-    t->data = x;
-    // this condition is if we want to add in start
-    if (index == 0)
-    {
-        t->next = first;
-        first = t;
-    }
-    // this condition is when we need to put it elsewhere
-    else if(index>0 || index < 3)
-    {
-        for (int i = 0; i < index - 1; i++)
-        {
-            p = p->next;
-        }
-        t->next = p->next;
-        p->next = t;
+void merge_sort_ll1(struct Node *p, struct Node *q){
+    //this first method is using an extra linked list (third)
+    struct Node *last;
+    if(p->data<q->data){
+        third = last = p;
+        p = p->next;
+        third->next = NULL;
     }
     else{
-      t->next = NULL;
-      p->next = t;
+        third = last = q;
+        q = q->next;
+        third->next = NULL;
     }
+    while(p && q){
+        if(p-> data < q->data){
+            last->next = p;
+            last = p;
+            p = p->next;
+            last->next = NULL;
+        }
+        else{
+            last -> next = q;
+            last = q;
+            q = q->next;
+            last->next = NULL;
+        }
+    }
+    if(p){
+        last->next = p;
+        }
+    else{last->next =q;}
 }
-
 void display(struct Node *p)
 {
     // we will have parameter as first
@@ -94,48 +90,11 @@ void display(struct Node *p)
         p = p->next;
     }
 }
-void sorted(){
-
-    struct Node *ll,*last;
-    third = (struct Node *)malloc(sizeof(struct Node));
-    int arr[];
-    int j=2 ;
-
-    while(j>0){
-        for(int i=0;i<3;i++){
-
-        }
-        j--;
-    }
-    // if(A[0]>B[0]){
-    //   third->data = A[0];
-    //   third->next = NULL;
-    //   last = third;
-    // }
-    // else {
-    //   third->data = B[0];
-    //   third->next = NULL;
-    //   last = third;
-    // }
-
-
-    for(int i = 1;i<3;i++){
-       
-       
-    }
-
-}
-
 int main(){
-    int A[] = {5,10,15};
-    int B[] = {2,3,10};
-     create1(A,3);
-     create2(B,3);
-    //  insert(first,0,11);
-    //  insert(first,1,4);
-    //  insert(first,2,55);
-    //  insert(first,3,7);
-     display(first);
-     printf("\n");
-     display(second);
+   int A[] = {1,3,5,7};
+   int B[] = {2,4,6,8,10};
+   create1(A,4);
+   create2(B,5);
+   merge_sort_ll1(first,second);
+   display(third);
 }
