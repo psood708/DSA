@@ -136,6 +136,7 @@ printf("\n");
     for(int i=0;i<n;i++){
         status[i]=0;
     }
+    //status means visited
     display(n,path,s1,status);
 }
 

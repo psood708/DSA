@@ -3,7 +3,7 @@
 struct Stack{
     int size;
     int top;
-    struct Node **S;
+    struct Node **S; 
 };
 void stackCreate(struct Stack *st,int size){
     st->size = size;

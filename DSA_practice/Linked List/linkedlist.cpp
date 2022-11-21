@@ -77,16 +77,18 @@ void LinkedList::Insert(int index,int x){
     else{
         for(int i = 0;i<index-1;i++){
             p= p->next;
+        
+        }
             t->next = p->next;
             p->next = t;
-        }
     }
 }
 
 int LinkedList::Delete(int index){
     Node *p,*q=NULL;
     int x = -1;
-    if(index == 1){
+    //this is actually for removing the first element
+    if(index == 0){
         p = first;
         first = first->next;
         x = p->data;
@@ -107,6 +109,9 @@ int LinkedList::Delete(int index){
 int main(){
     int A[] = {1,2,3,4,5};
     LinkedList l(A,5);
+    l.Display();
+    l.Insert(3,9);
+    l.Delete(1);
     l.Display();
     return 0;
 }

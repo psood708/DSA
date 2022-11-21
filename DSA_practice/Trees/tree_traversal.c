@@ -7,7 +7,7 @@ struct Node{
     int data;
     struct Node* left;
     struct Node* right;
-};
+}; 
 //we'll use stack for inorder
 struct stack_n{
     struct Node *t;
