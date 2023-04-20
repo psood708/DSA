@@ -14,7 +14,7 @@ using namespace std;
 // }
 // void create(A[],int l){
 //     struct Node *t,*last;
-//     first = new Node;
+//     first = new Node; 
 //     first->data = A[0];
 //     first->next = NULL;
 //     last = first;

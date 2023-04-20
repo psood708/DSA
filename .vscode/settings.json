@@ -5,7 +5,11 @@
     "xstring": "cpp",
     "xutility": "cpp",
     "iostream": "cpp",
-    "type_traits": "cpp"
+    "type_traits": "cpp",
+    "array": "cpp",
+    "deque": "cpp",
+    "list": "cpp",
+    "vector": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",

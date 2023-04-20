@@ -15,10 +15,10 @@ vector<vector<int>> matrixMult(vector<vector<int>> &a, vector<vector<int>> &b)
         for(int j  =0;j<size;j++){
             for(int k =0;k<size;k++){
                 C[i][j] +=a[i][k]*b[k][j];
-            }
+            } 
         }
     }
-    return C;
+    return C; 
 }
 
 int main(){
@@ -26,10 +26,19 @@ int main(){
     vector<vector<int>> A(3,vector<int>(3));
     vector<vector<int>> B(3,vector<int>(3));
     vector<vector<int>> C(3,vector<int>(3));
-    A = {{1,4,5},{1,2,1},{3,5,2} };
-    B = {{3,2,1},{1,3,2},{2,2,1} };
-    // A.push_back(a);
-    // B.push_back(b);
+      cout << "Enter elements of matrix A:\n";
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cin >> A[i][j];
+        }
+    }  
+         cout << "Enter elements of matrix B:\n";
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cin >> B[i][j];
+        }
+    }  
+ 
     C = matrixMult(A,B);
     cout<<"\n<<<<<<<<<<Final Matrix>>>>>>>>>\n";
     for(int i = 0;i<A.size();i++){
@@ -50,25 +59,4 @@ int main(){
 
 
 
-// This was just the demo that we did for learning the vectors that we are going to use in the starassen multiplication
-// void display(vector<int> &v){
-//     for( int i= 0; i<v.size();i++){
-//         cout<<v[i]<<" ";
-//     }
-//     cout<<endl;
-// }
-
-// int main(){
-//     vector<int> vec1;
-//     int element;
-//     for(int i = 0;i<4;i++){
-//         cout<<"Enter the element to add to this vector: ";
-//         cin>>element;
-//         vec1.push_back(element);
-//     }
-//     display(vec1);
-//     vector<int> :: iterator iter = vec1.begin(); // this is iteration 
-//     vec1.insert(iter+1,566);//this will insert iter at 2nd position
-//     display(vec1);
-//     return 0;
-// }
+ 

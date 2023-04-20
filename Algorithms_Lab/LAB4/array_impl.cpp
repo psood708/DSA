@@ -14,7 +14,7 @@ public:
     int ycord;
     Node *next;
 };
-
+ 
 class LinkedList
 {
 private:
@@ -188,12 +188,12 @@ void insertCity(int num)
         int b, c;
         cout << "Enter the name of the city : ";
         cin >> sm1;
-        cout << "Enter the coordinates of the city: ";
+        cout << "Enter the coordinates of the city (X,Y): ";
         cin >> b >> c;
         name[num] = sm1;
         x[num] = b;
         y[num] = c;
-        num += 1;
+        num += 1; 
     }
 }
 // here we will be asking for the coordinates of that specific point for this we have kept a situation of <50kms
@@ -311,7 +311,9 @@ int main()
         enterDetails(curr);
     }
     LinkedList ctyDB(name, x, y, num + 1);
+    cout<<"Inserting new city"<<endl;
     ctyDB.Insert(num);
+    
     ctyDB.Display();
     ctyDB.Delete();
     ctyDB.Search();

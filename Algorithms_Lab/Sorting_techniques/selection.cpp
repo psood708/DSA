@@ -19,7 +19,7 @@ void SelectionSort(int arr[],int length){
    
    }
 }
-void printArr(int arr[],int n){
+void printArr(int arr[],int n){ 
     for(int i=0;i<n;i++){
         cout<<arr[i]<<" ";
     }

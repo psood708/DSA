@@ -1,7 +1,7 @@
 #include <iostream>
 #include <climits>
 
-#define MAX_NODES 100
+#define MAX_NODES 50
 
 using namespace std;
 
@@ -16,7 +16,7 @@ void initialize() {
         for (j = 1; j <= MAX_NODES; j++) {
             if (i == j) {
                 graph[i][j] = 0;
-            } else {
+            } else { 
                 graph[i][j] = INT_MAX;
             }
         }
@@ -46,11 +46,11 @@ void print_graph() {
     }
 }
 
-// Function to perform the Floyd-Warshall algorithm on the graph
+ 
 void floyd_warshall() {
     int i, j, k;
 
-    // Initialize the distance matrix with the same values as the adjacency matrix
+    //distance matrix will be the one that will get modified
     int distance[MAX_NODES][MAX_NODES];
 
     for (i = 1; i <= num_nodes; i++) {
@@ -59,7 +59,8 @@ void floyd_warshall() {
         }
     }
 
-    // Perform the Floyd-Warshall algorithm
+    //k is for the node through which we'll go
+    // i and j represent the rows and columns
     for (k = 1; k <= num_nodes; k++) {
         for (i = 1; i <= num_nodes; i++) {
             for (j = 1; j <= num_nodes; j++) {
@@ -68,6 +69,18 @@ void floyd_warshall() {
                 }
             }
         }
+        cout<<"Intermediate steps through element "<<k<<endl;
+        for (i = 1; i <= num_nodes; i++) {
+        for (j = 1; j <= num_nodes; j++) {
+            if (distance[i][j] == INT_MAX) {
+                cout << "- ";
+            } else {
+                cout << distance[i][j] << " ";
+            }
+        }
+        cout << endl;
+    }
+
     }
 
     // Print the distance matrix
@@ -104,7 +117,7 @@ int main() {
 
     print_graph();
 
-    floyd_warshall();
+    floyd_warshall(); 
 
     return 0;
 }

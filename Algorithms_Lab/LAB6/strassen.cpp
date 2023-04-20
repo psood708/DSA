@@ -19,7 +19,7 @@ void print(string display, vector<vector<int>> matrix,
         {
             cout << setw(10);
             cout << matrix[i][j];
-        }
+        } 
         cout << endl;
     }
     cout << endl;
@@ -97,18 +97,11 @@ multiply_matrix(vector<vector<int>> matrix_A,
                                     [j + new_size];
             }
 
-        add_matrix(multiply_matrix(a00, b00),
-                   multiply_matrix(a01, b10),
-                   result_matrix_00, new_size);
-        add_matrix(multiply_matrix(a00, b01),
-                   multiply_matrix(a01, b11),
-                   result_matrix_01, new_size);
-        add_matrix(multiply_matrix(a10, b00),
-                   multiply_matrix(a11, b10),
-                   result_matrix_10, new_size);
-        add_matrix(multiply_matrix(a10, b01),
-                   multiply_matrix(a11, b11),
-                   result_matrix_11, new_size);
+//this will give for the resultant matrix
+        add_matrix(multiply_matrix(a00, b00), multiply_matrix(a01, b10),result_matrix_00, new_size);
+        add_matrix(multiply_matrix(a00, b01),multiply_matrix(a01, b11),result_matrix_01, new_size);
+        add_matrix(multiply_matrix(a10, b00),multiply_matrix(a11, b10),result_matrix_10, new_size);
+        add_matrix(multiply_matrix(a10, b01),multiply_matrix(a11, b11),result_matrix_11, new_size);
 
         for (auto i = 0; i < new_size; i++)
             for (auto j = 0; j < new_size; j++)
@@ -119,7 +112,8 @@ multiply_matrix(vector<vector<int>> matrix_A,
                 result_matrix[i + new_size]
                              [j + new_size] = result_matrix_11[i][j];
             }
-
+        // here we will be clearing out the values as it may interfere with the values
+        //  in next iteration
         result_matrix_00.clear();
         result_matrix_01.clear();
         result_matrix_10.clear();
@@ -138,18 +132,26 @@ multiply_matrix(vector<vector<int>> matrix_A,
 
 int main()
 {
-    vector<vector<int>> matrix_A = {{1, 1, 1, 1},
-                                    {2, 2, 2, 2},
-                                    {3, 3, 3, 3},
-                                    {2, 2, 2, 2}};
 
+    vector<vector<int>> matrix_A(ROW_1, vector<int>(COL_1));
+    cout << "Enter elements of matrix A:\n";
+    for (int i = 0; i < ROW_1; i++)
+    {
+        for (int j = 0; j < COL_1; j++)
+        {
+            cin >> matrix_A[i][j];
+        }
+    }
+    vector<vector<int>> matrix_B(ROW_2, vector<int>(COL_2));
+    cout << "Enter elements of matrix B:\n";
+    for (int i = 0; i < ROW_2; i++)
+    {
+        for (int j = 0; j < COL_2; j++)
+        {
+            cin >> matrix_B[i][j];
+        }
+    }
     print("Array A", matrix_A, 0, 0, ROW_1 - 1, COL_1 - 1);
-
-    vector<vector<int>> matrix_B = {{1, 1, 1, 1},
-                                    {2, 2, 2, 2},
-                                    {3, 3, 3, 3},
-                                    {2, 2, 2, 2}};
-
     print("Array B", matrix_B, 0, 0, ROW_2 - 1, COL_2 - 1);
 
     vector<vector<int>> result_matrix(
