@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/parth/OneDrive/Desktop/DESKTOP/DSA_applied/Algorithms_Lab/Sorting_techniques/LAB6",
-      "program": "c:/Users/parth/OneDrive/Desktop/DESKTOP/DSA_applied/Algorithms_Lab/Sorting_techniques/LAB6/build/Debug/outDebug",
+      "cwd": "c:/Users/parth/OneDrive/Desktop/DESKTOP/DSA_applied",
+      "program": "c:/Users/parth/OneDrive/Desktop/DESKTOP/DSA_applied/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

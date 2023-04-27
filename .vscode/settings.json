@@ -9,7 +9,8 @@
     "array": "cpp",
     "deque": "cpp",
     "list": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "limits": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",
@@ -45,5 +46,6 @@
     "**/.vscode",
     "**/.vscode/**"
   ],
-  "C_Cpp_Runner.useAddressSanitizer": false
+  "C_Cpp_Runner.useAddressSanitizer": false,
+  "C_Cpp_Runner.showCompilationTime": false
 }
