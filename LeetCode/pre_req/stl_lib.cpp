@@ -162,16 +162,60 @@ void expPriorityQue(){
 }
 
 void expSet(){
+
+    //everything happens in logrithmic time complexity
     //stores everything in sorted and unique
-    
+    set<int> st;
+    st.insert(1);
+    st.emplace(2);
+    st.insert(2);
+    st.insert(8);
+    st.insert(4);
+    // here a tree is maintained
+
+    auto it = st.find(4);
+    // auto it = st.find(6);
+
+    cout<<it<<endl;
+    // st.erase(5);
+    // int cnt = st.count(1);
+    // st.erase(8);
+
+    // To do further research on this
+    auto it = st.lower_bound(2);
+    auto it = st.upper_bound(3);
 
 }
+
+void expMultiSet(){
+// this only follows the unique propeorty
+
+multiset<int> ms;
+ms.insert(1);
+ms.insert(1);
+ms.insert(2);
+// ms.erase(1); // this will delete all the occurence of 1
+int cnt = ms.count(1);
+cout<< cnt<<endl;
+ms.erase(ms.find(1));
+ms.erase(ms.find(1),ms.find(1)+2)
+
+}
+
+
+void expMap(){
+    map<int,int> mpp;
+    map<int,pair<int,int>> mpp1;
+    map< pair<int,int>
+}
+
 int main(){
     // expPair();
     // expVector();
     // expDeque();
     // explainStack();
     // expQueue();
-    expPriorityQue();
+    // expPriorityQue();
+    expSet();
     return 0;
 }
