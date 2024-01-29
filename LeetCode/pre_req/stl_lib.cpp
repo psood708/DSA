@@ -176,7 +176,7 @@ void expSet(){
     auto it = st.find(4);
     // auto it = st.find(6);
 
-    cout<<it<<endl;
+    // cout<<it<<endl;
     // st.erase(5);
     // int cnt = st.count(1);
     // st.erase(8);
@@ -198,15 +198,46 @@ ms.insert(2);
 int cnt = ms.count(1);
 cout<< cnt<<endl;
 ms.erase(ms.find(1));
-ms.erase(ms.find(1),ms.find(1)+2)
+// ms.erase(ms.find(1),ms.find(1)+2);
 
 }
 
 
 void expMap(){
     map<int,int> mpp;
-    map<int,pair<int,int>> mpp1;
-    map< pair<int,int>
+    map<int, pair<int,int>> mpp;
+    map< pair<int,int>,int> mpp;
+    mpp[1] = 2;
+    mpp.emplace({3,1});
+    mpp.insert({2,4});
+    // mpp[{2,4}] = 10;
+    
+    for(auto it:mpp){
+        cout<< it.first << " "<<it.second<< endl;
+    }
+
+
+}
+
+void explExtra(){
+
+    sort(a,a+n);
+    sort(v.begin(),v.end())
+
+    sort(a+2,a+4);
+
+    sort(a,a+n,greater<int>);
+
+    int num = 7;
+    int cnt = __builtin_popcount(); /// this will give how many number of 1 is there
+    long long num = 132394439304;
+    int cnt = __builtin_popcountll();
+    // for permuations of a string
+    string s = "123";
+    do{
+        cout<<s<<endl;
+    }while(next_permutation(s.begin(),s.end()));
+    
 }
 
 int main(){
@@ -216,6 +247,7 @@ int main(){
     // explainStack();
     // expQueue();
     // expPriorityQue();
-    expSet();
+    // expSet();
+    expMap();
     return 0;
 }
