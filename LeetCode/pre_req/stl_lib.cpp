@@ -208,7 +208,7 @@ void expMap(){
     map<int, pair<int,int>> mpp;
     map< pair<int,int>,int> mpp;
     mpp[1] = 2;
-    mpp.emplace({3,1});
+    // mpp.emplace({3,1});
     mpp.insert({2,4});
     // mpp[{2,4}] = 10;
     
@@ -224,7 +224,7 @@ void explExtra(){
     sort(a,a+n);
     sort(v.begin(),v.end())
 
-    sort(a+2,a+4);
+    // sort(a+2,a+4);
 
     sort(a,a+n,greater<int>);
 
