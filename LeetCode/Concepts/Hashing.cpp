@@ -66,11 +66,12 @@ int main(){
 
     // int arr[] = {10,5,10,15,15,5,10,5,15};
     // int n = sizeof(arr) / sizeof(arr[0]);
-    // cntFreq(arr,n);
+  
     // return 0;
     int arr[] = {10, 5, 10, 15, 10, 5,23,10,15,4,23,10};
     int n = sizeof(arr) / sizeof(arr[0]);
     maxminFreq(arr, n);
+      cntFreq(arr,n);
     return 0;
  
 }
