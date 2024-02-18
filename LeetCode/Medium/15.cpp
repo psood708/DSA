@@ -6,9 +6,9 @@ using namespace std;
 vector<vector<int>> t3eeSum(vector<int> &nums){
     vector<vector<int>> ans;
     int sum;
-    sort(nums.begin(), nums.end());
-    for(int i=0;i<nums.size();i++){
-        if(i!=0 && nums[i]==nums[i-1]) continue;
+    sort(nums.begin(), nums.end()); // -2 , 0, 1 , 1, 2
+    for(int i=0;i<nums.size();i++){ // 0 - 4
+        if(i!=0 && nums[i]==nums[i-1]) continue; 
         int j = i+1;
         int k = nums.size() -1;
         while(j<k){
@@ -64,10 +64,7 @@ void printArr(vector<vector<int>> &mn){
 }
 
 int main(){
-    vector<int> jg = {-1,0,1,2,-1,-4};
-     
-    sort(jg.begin(),jg.end()) ;
-   
+    vector<int> jg = {-2,0,1,1,2};
     vector<vector<int>> mn = t3eeSum(jg) ;
     printArr(mn);
     
