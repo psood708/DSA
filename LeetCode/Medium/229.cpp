@@ -49,6 +49,10 @@ vector<int> majorityElement(vector<int>& nums) {
 
 
 int main(){
-    vector<int>
+    vector<int> n ={1,2,3,1,2,3,1,3,2,2,1};
+    vector<int> res = majorityElement(n);
+    for(auto i:res){
+        cout<<i<<" ";
+    }
     return 0;
 }
