@@ -18,7 +18,34 @@ using namespace std;
 
     return nums[0];
 }
+// ALternate solutiion here
+int findMin1(vector<int>& nums) {
+        if(nums.size()==1) return nums[0];
 
+        if(nums[0]<nums[nums.size()-1]) return nums[0];
+
+        int a=0;
+        int b=nums.size()-1;
+
+        while(a<b){
+            int mid=(a+b)/2;
+
+            if(b-a==1){
+                if(nums[b]<nums[a]) return nums[b]; 
+            }
+
+            if(nums[mid-1]>nums[mid]) return nums[mid];
+
+            else if(nums[mid]>nums[mid+1]) return nums[mid+1];
+
+            if(nums[mid]>nums[0]) a=mid+1;
+
+            else 
+            b=mid-1;
+
+        }
+        return 0;
+}
 int main ()
 {
      vector<vector<int>> tstcases = {{3,4,5,1,2},{4,5,6,7,0,1,2},{11,13,15,17},{3,1,2},{1}};
