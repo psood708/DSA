@@ -70,6 +70,9 @@ double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
     }
 int main ()
 {
+    vector<int> n = {1,2};
+    vector<int> n1  = {3,4};
+    cout<< findMedianSortedArrays(n,n1)<<endl;
      
     return 0;
 }
