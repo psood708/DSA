@@ -7,6 +7,6 @@ string customSortString(string order, string s) {
 
 int main ()
 {
-    string s1 = 
+    // string s1 = 
     return 0;
 }
